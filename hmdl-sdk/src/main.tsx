@@ -4,7 +4,11 @@ import { HmdlWidget } from '.';
 
 const App: React.FC = () => (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <HmdlWidget />
+        <HmdlWidget 
+            apiKey={'1'}
+            checkedState={true}
+            theme={'dark'}
+        />
     </div>
 );
 

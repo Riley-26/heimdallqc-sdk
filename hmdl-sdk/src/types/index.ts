@@ -20,5 +20,5 @@ export interface ClientConfig {
 export interface WidgetProps {
     apiKey: string
     checkedState: boolean
-    className?: string
+    theme: 'dark' | 'light'
 }
