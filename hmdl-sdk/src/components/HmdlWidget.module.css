@@ -1,0 +1,231 @@
+:root {
+    --dark-primary-color: #ddd;
+    --dark-secondary-color: #aaa;
+
+    --light-primary-color: #111;
+    --light-secondary-color: #666;
+}
+
+.widgetContainer,
+.errorContainer {
+    position: relative;
+    background-color: #eee;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 2px 5px 8px rgba(0,0,0,0.2);
+    color: var(--light-primary-color);
+}
+
+.errorContainer {
+    position: absolute;
+    top: -32px;
+    left: 16px;
+    background-color: #f9f9f9;
+    border-bottom: 2px solid #900;
+    z-index: 100;
+    padding-right: 24px;
+    animation: slideInFromBottom 0.2s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.errorText {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.errorClose {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--light-secondary-color);
+    opacity: 70%;
+    background-color: transparent;
+    border: none;
+}
+
+.dark.widgetContainer,
+.dark .errorContainer {
+    background-color: #111;
+    color: var(--dark-primary-color);
+}
+
+.dark .errorContainer {
+    background-color: #0b0b0b;
+}
+
+.widgetCollapsed,
+.widgetExpanded {
+    display: flex;
+    align-items: center;
+}
+
+.widgetExpanded {
+    position: relative;
+}
+
+.widgetLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+}
+
+.widgetLinks {
+    display: flex;
+    gap: 8px;
+}
+
+.widgetLink {
+    color: var(--light-primary-color);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.dark .widgetLink {
+    color: var(--dark-primary-color);
+}
+
+.widgetArrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 700;
+    transform: scaleX(0.7);
+    padding: 0 8px;
+    margin: 0 4px 0 0;
+    color: var(--light-secondary-color);
+    height: max-content;
+}
+
+.dark .widgetArrow {
+    color: var(--dark-secondary-color)
+}
+
+.widgetMain {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 24px;
+    margin-bottom: 8px;
+}
+
+.widgetText {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    padding-left: 32px;
+}
+
+.widgetCheckbox {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.widgetText::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--dark-secondary-color);
+    border-radius: 4px;
+    background: var(--dark-primary-color);
+    transition: border-color 0.2s;
+}
+
+.widgetCheckbox:checked + .widgetText::before {
+    background: #605a49;
+    border-color: #a69979;
+}
+
+.dark .widgetText::before {
+    border: 2px solid var(--light-secondary-color);
+    background: #333;
+}
+
+.dark .widgetCheckbox:checked + .widgetText::before {
+    background: #ecd9a8;
+    border-color: #a69979;
+}
+
+.widgetButton,
+.widgetButtonConfirmed {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    width: 100px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--light-secondary-color);
+    border-radius: 4px;
+    padding: 2px 4px;
+    color: var(--light-primary-color);
+    transition: all 0.1s ease;
+}
+
+.dark .widgetButton {
+    border: 2px solid var(--dark-secondary-color);
+    color: var(--dark-primary-color);
+}
+
+.widgetButton:hover,
+.widgetConfirmed {
+    background-color: var(--light-secondary-color);
+    border: 2px solid var(--light-secondary-color);
+    color: var(--dark-primary-color);
+}
+
+.dark .widgetButton:hover,
+.dark .widgetConfirmed {
+    background-color: var(--dark-secondary-color);
+    border: 2px solid var(--dark-secondary-color);
+    color: var(--light-primary-color);
+}
+
+.widgetDisclaimer {
+    color: rgba(0,0,0,0.3);
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dark .widgetDisclaimer {
+    color: rgba(255,255,255,0.2);
+}
+
+/* WIDGET ERROR */
+
+.errorContainer {
+
+}
+
+.errorText {
+
+}

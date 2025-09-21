@@ -1,3 +1,5 @@
+import type { HmdlClient } from "../client/HmdlClient"
+
 // Core response types
 export interface BaseResult {
     status: 200 | 500
@@ -19,6 +21,8 @@ export interface ClientConfig {
 // Widget props
 export interface WidgetProps {
     apiKey: string
-    checkedState: boolean
-    theme: 'dark' | 'light'
+    client: HmdlClient
+    theme?: 'dark' | 'light'
+    defaultExpanded?: boolean,
+    showErrorPopup?: any
 }
