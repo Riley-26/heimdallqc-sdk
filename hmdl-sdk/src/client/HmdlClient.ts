@@ -25,7 +25,7 @@ export class HmdlClient {
     }
 
     private async triggerWebhook(text: string, workId: string) {
-        const createSubmission = await fetch("http://127.0.0.1:8001/analyse", {
+        const createSubmission = await fetch("https://tranquil-miracle-production.up.railway.app/analyse", {
             method: "POST",
             headers: {
                 'Content-type': 'application/json',

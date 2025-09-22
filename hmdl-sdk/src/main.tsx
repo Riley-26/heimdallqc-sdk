@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { HmdlClient, HmdlWidget } from '.';
 
 const App: React.FC = () => {
-    const hmdl = new HmdlClient({apiKey:"FLqRe4sNO16M0WImOzjtAJBhhQ0ru3PyZFdxR37Lmwm6jbpy", baseUrl:"yeah"})
+    const hmdl = new HmdlClient({apiKey:"CxVHrClHgVGwj7UAOHOCsyyPiUG4F8IiIw6jj23yWvc24VfG", baseUrl:"yeah"})
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
