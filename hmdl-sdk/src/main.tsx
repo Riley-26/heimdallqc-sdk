@@ -30,7 +30,6 @@ const App: React.FC = () => {
             </form>
             <HmdlWidget 
                 key={hmdl.key}
-                apiKey={'1'}
                 client={hmdl}
                 theme={'dark'}
                 defaultExpanded={true}

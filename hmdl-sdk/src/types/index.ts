@@ -20,7 +20,6 @@ export interface ClientConfig {
 
 // Widget props
 export interface WidgetProps {
-    apiKey: string
     client: HmdlClient
     theme?: 'dark' | 'light'
     defaultExpanded?: boolean,

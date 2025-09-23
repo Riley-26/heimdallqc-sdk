@@ -3,7 +3,6 @@ import type { WidgetProps } from "../types"
 import styles from './HmdlWidget.module.css'
 
 export const HmdlWidget: React.FC<WidgetProps> = ({
-    apiKey,
     client,
     theme,
     defaultExpanded
@@ -12,7 +11,7 @@ export const HmdlWidget: React.FC<WidgetProps> = ({
     const [isExpanded, setIsExpanded] = useState<boolean | undefined>(defaultExpanded || false)
     const [isConfirmed, setIsConfirmed] = useState<boolean>(false)
     const [errorPopup, setErrorPopup] = useState<boolean>(false)
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const handleChangeState = () => {
         setCheckedState(!checkedState)
