@@ -4,8 +4,8 @@ import { HmdlClient, HmdlWidget } from '.';
 
 const App: React.FC = () => {
     const hmdl = new HmdlClient({
-        apiKey:"QKPhx7w8WqrEt4eyGI6ltr7UyJ1StyNUuFOE5H3mBY4dxWDv",
-        baseUrl:"http://127.0.0.1:8000/yello"
+        apiKey:"WW4bgYVtK9VqHDgN7b7rH6q1xSEqZBxB3ssgXCslKH2NYZwJ",
+        baseUrl: "http://127.0.0.1:8000/yello"
     })
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

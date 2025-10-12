@@ -2,7 +2,7 @@ import type { ClientConfig, BaseResult, WebhookResult } from "../types";
 
 export class HmdlClient {
     private apiKey: string
-    private baseUrl?: string
+    private baseUrl?: string = ""
     private checkedState?: boolean = false
     private confirmedState?: boolean = false
     errorPopup: boolean = false
@@ -25,21 +25,25 @@ export class HmdlClient {
     }
 
     private async triggerWebhook(text: string, workId: string) {
-        await fetch("http://127.0.0.1:8001/analyse", {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json',
-                'Authorization': `Bearer ${this.apiKey}`
-            },
-            body: JSON.stringify({
-                orig_text: text,
-                work_id: workId,
-                question_result: this.checkedState,
-                domain: window.location.hostname,
-                page_link: window.location.href,
-                webhook_url: this.baseUrl
-            })
-        });
+        try {
+            await fetch("https://tranquil-miracle-production.up.railway.app/analyse", {
+                method: "POST",
+                headers: {
+                    'Content-type': 'application/json',
+                    'Authorization': `Bearer ${this.apiKey}`
+                },
+                body: JSON.stringify({
+                    orig_text: text,
+                    work_id: workId,
+                    question_result: this.checkedState,
+                    domain: window.location.hostname,
+                    page_link: window.location.href,
+                    webhook_url: this.baseUrl
+                })
+            });
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     setOnErrorPopupChange(callback: (state: boolean) => void): void {
@@ -65,11 +69,8 @@ export class HmdlClient {
     }
 
     setErrorPopup(state: boolean): void {
-        console.log("error")
         const oldState = this.errorPopup
         this.errorPopup = state
-        console.log(oldState)
-        console.log(state)
         
         if (oldState !== state && this.onErrorPopupChange) {
             this.onErrorPopupChange(state)
