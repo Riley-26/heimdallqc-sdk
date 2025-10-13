@@ -1,7 +1,7 @@
 {
-    "name": "hmdl-sdk",
-    "private": true,
-    "version": "0.1.0",
+    "name": "heimdallqc",
+    "private": false,
+    "version": "1.0.0",
     "type": "module",
     "main": "./dist/index.umd.cjs",
     "module": "./dist/index.js",
@@ -10,7 +10,8 @@
         "dev": "vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "prepublishOnly": "npm run build"
     },
     "files": [
         "dist"
@@ -21,6 +22,9 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.33.0",
+        "@rollup/plugin-babel": "^6.1.0",
+        "@rollup/plugin-commonjs": "^28.0.6",
+        "@rollup/plugin-node-resolve": "^16.0.3",
         "@testing-library/jest-dom": "^6.8.0",
         "@testing-library/react": "^16.3.0",
         "@testing-library/user-event": "^14.6.1",
@@ -32,9 +36,21 @@
         "eslint-plugin-react-refresh": "^0.4.20",
         "globals": "^16.3.0",
         "jsdom": "^27.0.0",
+        "rollup": "^4.52.4",
         "typescript": "~5.8.3",
         "typescript-eslint": "^8.39.1",
         "vite": "^7.1.2",
         "vitest": "^3.2.4"
+    },
+    "keywords": [
+        "react",
+        "sdk",
+        "typescript"
+    ],
+    "author": "R. Read",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^19.1.1",
+        "react-dom": "^19.1.1"
     }
 }
