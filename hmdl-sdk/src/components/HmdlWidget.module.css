@@ -1,9 +1,24 @@
+@font-face {
+    font-family: "redhat";
+    src: url("/fonts/RedHatDisplay-VariableFont_wght.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "redhat";
+}
+
 :root {
     --dark-primary-color: #ddd;
     --dark-secondary-color: #aaa;
 
     --light-primary-color: #111;
     --light-secondary-color: #666;
+
+    background-color: #222;
+    width: 100%;
+    margin-top: 108px;
 }
 
 .widgetContainer,

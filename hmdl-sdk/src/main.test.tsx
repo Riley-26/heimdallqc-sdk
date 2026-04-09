@@ -34,7 +34,7 @@ const App: React.FC = () => {
             <HmdlWidget 
                 key={hmdl.key}
                 client={hmdl}
-                theme={'dark'}
+                theme={'light'}
                 defaultExpanded={true}
             />
         </div>

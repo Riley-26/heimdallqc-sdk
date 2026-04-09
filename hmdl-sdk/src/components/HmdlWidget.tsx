@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import type { WidgetProps } from "../types"
 import styles from './HmdlWidget.module.css'
+import darkLogo from './assets/Asset 20.svg';
+import lightLogo from './assets/Asset 19.svg';
 
 export const HmdlWidget: React.FC<WidgetProps> = ({
     client,
@@ -70,7 +72,9 @@ export const HmdlWidget: React.FC<WidgetProps> = ({
                     <button className={styles.widgetArrow} onClick={handleExpand}>{'<'}</button>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <a className={styles.widgetLogo} href="https://heimdallqc.com" target="_blank">
-                            <img src={`/assets/Asset ${theme === "dark" ? "20.svg" : "19.svg"}`} />
+                            {
+                                theme === "dark" ? <img src={darkLogo} /> : <img src={lightLogo} />
+                            }
                         </a>
                         <div className={styles.widgetLinks}>
                             <a className={styles.widgetLink} href="https://heimdallqc.com/privacy#terms" target='_blank'>Terms</a>
@@ -98,7 +102,9 @@ export const HmdlWidget: React.FC<WidgetProps> = ({
                     <button className={styles.widgetArrow} onClick={handleExpand}>{'>'}</button>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <a className={styles.widgetLogo} href="https://heimdallqc.com" target="_blank">
-                            <img src={`/assets/Asset ${theme === "dark" ? "20.svg" : "19.svg"}`} />
+                            {
+                                theme === "dark" ? <img src={darkLogo} /> : <img src={lightLogo} />
+                            }
                         </a>
                         <div className={styles.widgetLinks}>
                             <a className={styles.widgetLink} href="https://heimdallqc.com/privacy#terms" target='_blank'>Terms</a>

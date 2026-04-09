@@ -1,11 +1,20 @@
 {
     "name": "heimdallqc",
     "private": false,
-    "version": "1.0.1",
+    "version": "1.0.12",
     "type": "module",
-    "main": "./dist/index.umd.cjs",
-    "module": "./dist/index.js",
+    "main": "./dist/index.umd.js",
+    "module": "./dist/index.es.js",
     "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.es.js",
+            "require": "./dist/index.umd.js"
+        },
+        "./style.css": "./dist/heimdallqc.css",
+        "./dist/heimdallqc.css": "./dist/heimdallqc.css"
+    },
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
@@ -17,8 +26,8 @@
         "dist"
     ],
     "dependencies": {
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1"
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.33.0",
@@ -28,9 +37,11 @@
         "@testing-library/jest-dom": "^6.8.0",
         "@testing-library/react": "^16.3.0",
         "@testing-library/user-event": "^14.6.1",
-        "@types/react": "^19.1.10",
-        "@types/react-dom": "^19.1.7",
         "@vitejs/plugin-react": "^5.0.0",
+        "@types/react": "^18.2.0",
+        "@types/react-dom": "^18.2.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "eslint": "^9.33.0",
         "eslint-plugin-react-hooks": "^5.2.0",
         "eslint-plugin-react-refresh": "^0.4.20",
@@ -40,6 +51,7 @@
         "typescript": "~5.8.3",
         "typescript-eslint": "^8.39.1",
         "vite": "^7.1.2",
+        "vite-plugin-dts": "^4.5.4",
         "vitest": "^3.2.4"
     },
     "keywords": [
@@ -50,7 +62,7 @@
     "author": "R. Read",
     "license": "MIT",
     "peerDependencies": {
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1"
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
     }
 }

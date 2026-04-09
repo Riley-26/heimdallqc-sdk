@@ -1,4 +1,4 @@
-import type { ClientConfig, BaseResult, WebhookResult } from "../types";
+import type { ClientConfig, BaseResult, WebhookResult } from "../index";
 
 export class HmdlClient {
     private apiKey: string
